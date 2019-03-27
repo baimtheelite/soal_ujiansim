@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Beranda</title>
+<link rel="stylesheet" type="text/css" href="css/w3.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+<script src="js/jquery-3.1.1.min.js"></script>
+
+<style>
+	#peraturan{
+		min-height: 200px; 
+	}
+	#tutor{
+		min-height: 500px;
+		margin-top: 0px;
+	}
+	.fixed {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; 
+	}
+
+	header{
+		width: 100%;
+		height: 80px;
+		top: 0;
+	}
+</style>
+</head>
+
+<body>
+<div class="navbar navbar-fixed-top">
+<header class="w3-blue w3-card-2 w3-padding-16">
+<h2 class="w3-center">Simulasi Ujian SIM C</h2>
+<ul class="nav nav-pills w3-card-4 w3-white">
+	<li><a href="#peraturan">Peraturan</a></li>
+	<li><a href="#tutor">Petunjuk</a></li>
+	<li><a class="primary" href="#mulai">Mulai</a></li>
+</ul>
+</header>
+</div>
+<div id="peraturan" class="w3-container">
+	<h2 style="margin-top: 150px;">Selamat Datang!</h2>
+	<h2 style="text-align: center">Peraturan</h2>
+	<h4>Baca peraturan terlebih dahulu</h4>
+	<div class="w3-panel w3-pale-blue w3-leftbar w3-border-blue w3-padding-16">
+	<ol>
+		<li>Jumlah soal sebanyak 30, pada setiap soal terdapat 4(empat) pilihan jawaban.</li>
+		<li>Periksa dan bacalah soal-soal sebelum Anda menjawabnya</li>
+		<li>Waktu mengerjakan soal adalah 30 menit</li>
+		<li>Periksalah perkerjaan Anda sebelum mengklik tombol submit</li>
+		<li>Minimal bernilai 70 atau keatas untuk lulus, jika kurang maka Anda  tidak lulus pada simulasi ujian resmi teori SIM C</li>
+	</ol>
+	</div>
+</div>
+
+<div class="container" id="tutor">
+	<h2 style="text-align: center">Petunjuk</h2>
+	<h3 style="text-align: center">Perhatikan Video dibawah ini!</h3>
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+		<center><h4>1. Pilihlah jawaban soal</h4>
+		<p>Pilihlan jawaban soal yang menurut Anda benar.<br>Perhatikan batas waktu pengerjaan.</p></center>
+			<video width="575" autoplay loop>
+				<source src="video/pilihan-ganda.mp4" type="video/MP4">
+			</video>
+		</div>
+		<div class="col-md-6 col-sm-12">
+		<center><h4>2. Periksa kembali jawaban Anda</h4>
+		<p>Jika sudah diperiksa dan yakin silahkan klik tombol Submit.<br> Kemudian lihat hasil pekerjaan Anda.</p></center>
+			<video width="575" autoplay loop>
+				<source src="video/submit.mp4" type="video/MP4">
+			</video>
+		</div>
+		</div>
+	
+	<div id="mulai-ujian" style="margin-top: 75px; min-height: 200px">
+		<center><h1>Apakah Anda sudah siap??</h1>
+				<h3>Klik tombol mulai ujian untuk memulai mengerjakan simulasi.</h3>
+		</center>
+
+
+<center><a class="w3-btn w3-padding-large w3-blue" href="http://localhost/soal_ujiansim/soal.php">Mulai Ujian</a></center>
+</div>
+</div>
+<!-- jQuery -->
+<script type="text/javascript">
+	$(document).ready(function(){
+	$("[href='#tutor']").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#tutor").offset().top-130},
+        'slow', function(){
+        	$("#tutor").fadeTo('fast', 0.5, function(){
+        		$("#tutor").fadeTo('fast', 1.0);
+        	});
+        	
+        });
+});
+$("[href='#peraturan']").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#peraturan").offset().top-125},
+        'slow', function(){
+        	$("#peraturan").fadeTo('fast', 0.5, function(){
+        		$("#peraturan").fadeTo('fast', 1.0);
+        	});
+        	
+        });
+	});
+$("[href='#mulai']").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#mulai-ujian").offset().top-125},
+        'slow', function(){
+        	$("#mulai-ujian").fadeTo('fast', 0.5, function(){
+        		$("#mulai-ujian").fadeTo('fast', 1.0);
+        	});
+        	
+        });
+	});
+});
+
+// var stickyOffset = $('#wrapper').offset().top;
+
+// $(window).scroll(function(){
+//   var sticky = $('#wrapper'),
+//       scroll = $(window).scrollTop();
+
+//   if (scroll >= stickyOffset) sticky.addClass('fixed');
+//   else sticky.removeClass('fixed');
+// });
+</script>
+
+</body>
+</html>
+
